@@ -1,1 +1,1 @@
-# Aplicação bachend da pizzaria
+# Aplicação backend da pizzaria
