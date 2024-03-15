@@ -20,12 +20,12 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction ) => {
     return res.status(400).json({
       error: err.message
     })
-
-    return res.status(400).json({
-      status: "error",
-      message: "Internal server error."
-    })
   }
+
+  return res.status(400).json({
+    status: "error",
+    message: "Internal server error."
+  })
 })
 
 app.listen(PORT, () => console.log(`Servidor online na porta ${PORT}, http://localhost:${PORT}`));
