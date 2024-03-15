@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import express, {Request, Response, NextFunction } from "express";
 import "express-async-errors";
 import cors from "cors"
@@ -5,6 +8,8 @@ import cors from "cors"
 import router from "./routes";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(cors());
 
@@ -23,4 +28,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction ) => {
   }
 })
 
-app.listen(3333, () => console.log("Servidor online na porta 3333, http://localhost:3333"));
+app.listen(PORT, () => console.log(`Servidor online na porta ${PORT}, http://localhost:${PORT}`));
