@@ -6,11 +6,11 @@ import { isAutenticated } from "./middlewares/isAutenthenticated";
 
 const router = Router();
 
-router.post("/user/register", new CreateUserController().handle)
-router.post("/user/auth", new AuthUserController().handle)
+router.post("/user/register", new CreateUserController().handle);
+router.post("/user/auth", new AuthUserController().handle);
 
 router.use(isAutenticated);
 
-router.get("/user/me", new DetailUserController().handle)
+router.get("/user/me", new DetailUserController().handle);
 
 export default router;
