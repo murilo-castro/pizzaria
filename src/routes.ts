@@ -5,6 +5,7 @@ import { DetailUserController } from "./controllers/user/DetailUserController";
 import { isAutenticated } from "./middlewares/isAutenthenticated";
 import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
 import { GetCategoryController } from "./controllers/category/GetCategoryController";
+import { CreateProductController } from "./controllers/product/CreateProductController";
 
 const router = Router();
 
@@ -17,5 +18,7 @@ router.get("/user/me", new DetailUserController().handle);
 
 router.get("/category", new GetCategoryController().handle);
 router.post("/category", new CreateCategoryController().handle);
+
+router.post("/product", new CreateProductController().handle);
 
 export default router;
