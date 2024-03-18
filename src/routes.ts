@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { CreateUserController } from "./controllers/user/CreateUserController"
+import { CreateUserController } from "./controllers/user/CreateUserController";
 import { AuthUserController } from "./controllers/user/AuthUserController";
 import { DetailUserController } from "./controllers/user/DetailUserController";
 import { isAutenticated } from "./middlewares/isAutenthenticated";
+import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
 
 const router = Router();
 
@@ -12,5 +13,7 @@ router.post("/user/auth", new AuthUserController().handle);
 router.use(isAutenticated);
 
 router.get("/user/me", new DetailUserController().handle);
+
+router.post("/category/register", new CreateCategoryController().handle);
 
 export default router;

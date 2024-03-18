@@ -12,11 +12,11 @@ const isAutenticated = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).end();
   }
 
-  const jwtSecret = process.env.JWT_SECRET as string
+  const jwtSecret = process.env.JWT_SECRET as string;
   const [, token] = authToken.split(" ");
 
   try {
-    const { sub } = verify(token, jwtSecret) as payload
+    const { sub } = verify(token, jwtSecret) as payload;
 
     req.user_id = sub;
 
@@ -24,6 +24,6 @@ const isAutenticated = (req: Request, res: Response, next: NextFunction) => {
   } catch (error) {
     return res.status(401).end();
   }
-}
+};
 
 export { isAutenticated };
