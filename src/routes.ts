@@ -10,6 +10,7 @@ import { GetCategoryController } from "./controllers/category/GetCategoryControl
 import { CreateProductController } from "./controllers/product/CreateProductController";
 
 import uploadConfig from "./config/multer";
+import { ListByCategoryController } from "./controllers/product/ListByCatogoryController";
 
 const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"));
@@ -29,5 +30,6 @@ router.post(
   upload.single("file"),
   new CreateProductController().handle
 );
+router.get("/category/product", new ListByCategoryController().handle);
 
 export default router;
