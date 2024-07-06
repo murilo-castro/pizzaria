@@ -19,7 +19,7 @@ SSH:
 HTTPS:
 
 ```
- <https://github.com/murilo-castro/pizzaria-backend.git>
+ https://github.com/murilo-castro/pizzaria-backend.git
 ```
 
 Em seguida entre na pasta do projeto com o seguinte comando:
