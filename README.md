@@ -31,7 +31,7 @@ cd pizzaria-backend
 Logo após é necessário instalar as dependêcias do projeto, para isso o comando abaixo:
 
 ```
-yarn add
+yarn
 ```
 
 Ou
