@@ -16,6 +16,7 @@ import { RemoveOrderController } from "./controllers/order/RemoveOrderController
 import { AddItemConctroller } from "./controllers/items/AddItemConctroller";
 import { RemoveItemController } from "./controllers/items/RemoveItemController";
 import { SendOrderControler } from "./controllers/order/SendOrderControler";
+import { ListOrderController } from "./controllers/order/ListOrderController";
 
 const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"));
@@ -40,6 +41,7 @@ router.get("/category/product", new ListByCategoryController().handle);
 router.post("/order", new CreateOderController().handle);
 router.delete("/order", new RemoveOrderController().handle);
 router.put("/order/send", new SendOrderControler().handle);
+router.get("/orders", new ListOrderController().handle);
 
 router.post("/order/item", new AddItemConctroller().handle);
 router.delete("/order/item", new RemoveItemController().handle);
